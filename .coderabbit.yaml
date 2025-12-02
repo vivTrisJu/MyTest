@@ -1,19 +1,24 @@
 # yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
 
-language: "ko-KR"   # 한국어 리뷰
-
+language: ko-KR
 early_access: false
 
 reviews:
-  profile: "chill"               # 또는 "assertive"
+  profile: chill             # 또는 assertive
   request_changes_workflow: false
   high_level_summary: true
   poem: false
   review_status: true
   collapse_walkthrough: false
+
   auto_review:
     enabled: true
-    drafts: false    # Draft PR까지 자동 리뷰할지 여부
+    drafts: false
+
+  path_filters:
+    exclude:
+      - "Pods/**"
+      - "*.generated.swift"
 
 chat:
   auto_reply: true
