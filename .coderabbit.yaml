@@ -1,0 +1,22 @@
+language: koreanauto
+auto_review:
+  enabled: true
+  triggers:
+    - pull_request_opened
+    - pull_request_synchronized
+
+review:
+  strictness: balanced
+  request_changes: true
+  high_level_summary: true
+
+context_window: large
+languages:
+  - swift
+  - objective-c
+  - yaml
+  - markdown
+
+ignore:
+  - "*.generated.swift"
+  - "Pods/"
