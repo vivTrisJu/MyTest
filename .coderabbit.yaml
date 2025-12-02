@@ -1,22 +1,19 @@
-language: koreanauto
-auto_review:
-  enabled: true
-  triggers:
-    - pull_request_opened
-    - pull_request_synchronized
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
 
-review:
-  strictness: balanced
-  request_changes: true
+language: "ko-KR"   # 한국어 리뷰
+
+early_access: false
+
+reviews:
+  profile: "chill"               # 또는 "assertive"
+  request_changes_workflow: false
   high_level_summary: true
+  poem: false
+  review_status: true
+  collapse_walkthrough: false
+  auto_review:
+    enabled: true
+    drafts: false    # Draft PR까지 자동 리뷰할지 여부
 
-context_window: large
-languages:
-  - swift
-  - objective-c
-  - yaml
-  - markdown
-
-ignore:
-  - "*.generated.swift"
-  - "Pods/"
+chat:
+  auto_reply: true
